@@ -1,0 +1,100 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="addPaging()">Grid 1 (Paging) </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link active" (click)="addSorting()">Grid 2 (Sorting)</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" (click)="addFiltering()">Grid 3 (Filtering)</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" (click)="addEditing()">Grid 4 (Editing)</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<br />
+<br />
+
+<igx-grid
+  #grid1
+  [allowFiltering]="true"
+  [data]="localData"
+  [primaryKey]="'EmployeeID'"
+  width="900px"
+  height="550px"
+  [rowEditable]="edit"
+  [paging]="page"
+>
+  <igx-column
+    field="FirstName"
+    header="First Name"
+    width="150px"
+    [sortable]="sort"
+    [filterable]="filter"
+  >
+  </igx-column>
+  <igx-column
+    field="LastName"
+    header="Last Name"
+    width="150px"
+    [sortable]="sort"
+    [filterable]="filter"
+  >
+  </igx-column>
+  <igx-column
+    field="Country"
+    width="140px"
+    [sortable]="sort"
+    [filterable]="filter"
+  >
+  </igx-column>
+  <igx-column
+    field="Age"
+    width="110px"
+    dataType="number"
+    [sortable]="sort"
+    [filterable]="filter"
+  >
+  </igx-column>
+  <igx-column
+    field="RegistererDate"
+    header="Registerer Date"
+    width="180px"
+    dataType="date"
+    [sortable]="sort"
+    [filterable]="filter"
+  >
+    <ng-template igxCell let-value>
+      {{ value | date }}
+    </ng-template>
+  </igx-column>
+  <igx-column
+    field="IsActive"
+    header="Is Active"
+    width="140px"
+    dataType="boolean"
+    [sortable]="sort"
+    [filterable]="filter"
+  >
+    <ng-template igxCell let-cell="cell">
+      <igx-checkbox [checked]="cell.value" [disabled]="true"></igx-checkbox>
+    </ng-template>
+  </igx-column>
+</igx-grid>

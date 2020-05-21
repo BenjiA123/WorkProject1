@@ -1,10 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 // Standard CSS normalize, comment out if not required or using a different module
 @import "~minireset.css/minireset";
+@import "~bootstrap/dist/css/bootstrap.min.css";
 
 /* See: https://www.infragistics.com/products/ignite-ui-angular/angular/components/themes.html */
 @import "~igniteui-angular/lib/core/styles/themes/index";
-
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 $primary: #731963 !default;
 $secondary: #ce5712 !default;
 
@@ -15,10 +16,19 @@ $app-palette: igx-palette($primary, $secondary);
 @include igx-core();
 @include igx-theme($app-palette);
 
-
-html, body {
+html,
+body {
   height: 100%;
 }
 .content p {
   margin: 15px;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
