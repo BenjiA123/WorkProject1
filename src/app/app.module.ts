@@ -8,7 +8,7 @@ import {
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { HomeComponent } from "./home/home.component";
+// import { HomeComponent } from "./home/home.component";
 import { GridComponent } from "./grid/grid.component";
 import {
   IgxGridModule,
@@ -18,7 +18,7 @@ import {
 import { PopUpComponent } from "./pop-up/pop-up.component";
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, GridComponent, PopUpComponent],
+  declarations: [AppComponent,  GridComponent, PopUpComponent],
   imports: [
     BrowserModule,
     HammerModule,

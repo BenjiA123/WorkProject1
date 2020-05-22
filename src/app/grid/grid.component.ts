@@ -14,29 +14,16 @@ export class GridComponent implements OnInit {
   page = false;
   sort = false;
   edit = false;
-  
+
   constructor(private renderer: Renderer2, public dialog: MatDialog) {}
   message = "New feature Added";
 
   openPopUpComponent(data) {
     this.dialog.open(PopUpComponent, { data: { message: data } });
   }
-
-  // toggleProp(val:boolean, message:string) {
-  //   val = false
-  //   if (val) {
-  //     this.openPopUpComponent(`${message} Removed`);
-  //     val = !val;
-  //   } else {
-  //     this.openPopUpComponent(`${message} Added`);
-  //     val = !val;
-  //   }
-  // }
   ngOnInit() {
     this.localData = employeesData;
   }
-
-  
 
   addSorting() {
     if (this.sort) {
@@ -46,9 +33,10 @@ export class GridComponent implements OnInit {
       this.openPopUpComponent("Sorting Added");
       this.sort = !this.sort;
     }
-  }  
+  }
 
   addEditing() {
+    console.log(this.edit);
     if (this.edit) {
       this.openPopUpComponent("Editing Removed");
       this.edit = !this.edit;
@@ -75,6 +63,4 @@ export class GridComponent implements OnInit {
       this.filter = !this.filter;
     }
   }
-
 }
-// jv slnvevnkjsnkjnwlsbvsl;fnjlnJ
